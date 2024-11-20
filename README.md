@@ -1,6 +1,4 @@
-Here's a professional **README.md** template for your project:
 
----
 
 # **Audio Transcription Web App**
 
