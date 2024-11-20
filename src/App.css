@@ -1,38 +1,149 @@
-.App {
-  text-align: center;
+.audio-recorder {
+  font-family: Arial, sans-serif;
+  color: #f4f4f4;
+  background-color: #222;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 20px auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.controls button {
+  background-color: #4caf50;
+  border: none;
   color: white;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.controls button:hover {
+  background-color: #45a049;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.recording-animation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  margin-top: 20px;
+}
+
+.recording-bar {
+  width: 8px;
+  height: 20px;
+  background: linear-gradient(180deg, #ff3e3e, #ffcccb);
+  animation: pulse 1s infinite ease-in-out;
+  border-radius: 4px;
+}
+
+.recording-bar:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.recording-bar:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.recording-bar:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.recording-bar:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.recording-bar:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scaleY(0.5);
+    opacity: 0.7;
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: scaleY(1.5);
+    opacity: 1;
   }
+  100% {
+    transform: scaleY(0.5);
+    opacity: 0.7;
+  }
+}
+
+
+.saved-audios {
+  margin-top: 20px;
+}
+
+.saved-audios h2 {
+  margin-bottom: 10px;
+  color: #ff9800;
+}
+
+.audio-item {
+  display: flex;
+  align-items: center;
+  background-color: #333;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.audio-item audio {
+  flex: 1;
+  margin-right: 15px;
+  outline: none;
+}
+
+.transcription {
+  flex: 2;
+  font-size: 14px;
+  color: #fff;
+  background: #444;
+  padding: 8px;
+  border-radius: 5px;
+  margin-right: 10px;
+
+  /* Handle long text gracefully */
+  white-space: pre-wrap; /* Wrap long text to the next line */
+  word-wrap: break-word; /* Break long words if needed */
+  max-height: 100px; /* Limit the height */
+  overflow-y: auto; /* Add vertical scroll for long content */
+}
+
+/* Optional: Custom scrollbar for better style */
+.transcription::-webkit-scrollbar {
+  width: 6px;
+}
+
+.transcription::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 5px;
+}
+
+.transcription::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+
+.transcription strong {
+  color: #ff9800;
+}
+
+.delete-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
 }
